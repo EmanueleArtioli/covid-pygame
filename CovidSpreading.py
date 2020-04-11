@@ -35,16 +35,15 @@ while RUNNING:
             RUNNING = False
 
     for i in range(N):   # every person
-        pygame.time.delay(100)  # every 100 ms
-        X = randint(-1, 1)
-        Y = randint(-1, 1)
-        crowd_coords[i] = crowd_coords[i].move([CELLSIZE * X, CELLSIZE * Y])  # moves a step in a random direction
+        pygame.time.delay(10)  # every 10 ms
+        X = randint(-5, 5)
+        Y = randint(-5, 5)
+        crowd_coords[i] = crowd_coords[i].move([X, Y])  # moves a few steps in a random direction
         pygame.draw.rect(board, BLUE, crowd_coords[i], 1)
         board.blit(crowd_surfaces[i], crowd_coords[i])
     pygame.display.update()
     print(crowd_coords)
 pygame.quit()
-
 
 # if it would hit a wall
 # instead it stays still
